@@ -1,0 +1,1 @@
+python utils_grounding/convert_img_db.py --output img_db --feats_path /data4/reverie_obj_feats_v2.pkl --feats_format pkl

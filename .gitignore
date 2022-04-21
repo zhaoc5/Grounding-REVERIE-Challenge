@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+img_db/*
+input_nav_dir/*
+submit_file/*
+txt_db/ann/iid2bb_id/*
+txt_db/ann/reverie/*
+txt_db/txt/*
+weights/ckpt/*
+weights/results/*
