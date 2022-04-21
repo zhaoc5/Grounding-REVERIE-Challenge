@@ -4,15 +4,10 @@ This code derives from [UNITER](https://github.com/ChenRocks/UNITER).
 
 
 ## Requirements
-- [Nvidia driver](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation)
-- [Nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker#quickstart)
-- [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- [Docker group membership](https://docs.docker.com/install/linux/linux-postinstall/)
-
-For more details, please follow [UNITER](https://github.com/ChenRocks/UNITER) instructions. We tested on Ubuntu 20.04 and Nvidia 2080ti.
+You need [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to run the code. For more details, please follow [UNITER](https://github.com/ChenRocks/UNITER) instructions. We tested on Ubuntu 20.04 and Nvidia 2080ti.
 
 ## Data Preparation
-Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([everie_obj_feats_v2.pkl](https://www.baidu.com) or [reverie_bbox_feat_v2_caffe.zip](https://www.baidu.com), both of them are extracted using [Bottom-up attention](https://github.com/peteanderson80/bottom-up-attention) Faster R-CNN), and organise data like below:
+Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://www.baidu.com) or [reverie_bbox_feat_v2_caffe.zip](https://www.baidu.com), both of them are extracted using [BUTD-UNITER-NLVR2](https://github.com/ChenRocks/BUTD-UNITER-NLVR2), and organise data like below:
 ```
 |- Grounding-REVERIE-Challenge
     |- Downloads
@@ -27,13 +22,13 @@ Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tas
         |   ...           
         |   |- zsNo4HB9uLZ_faad06c7cb2b4a6f9220e7f6f87c800b.json
         |
-        |- reverie_bbox_feat_v2_caffe
+        |- reverie_bbox_feat_v2_caffe (option 1)
         |   |- 1LXtFkjw3qL_0b22fa63d0f54a529c525afbf2e8bb25_00.h5
         |   |- 1LXtFkjw3qL_0b22fa63d0f54a529c525afbf2e8bb25_01.h5
         |   ...           
         |   |- zsNo4HB9uLZ_faad06c7cb2b4a6f9220e7f6f87c800b_35.h5
         |
-        |- reverie_obj_feats_v2.pkl
+        |- reverie_obj_feats_v2.pkl (option 2)
 ```
 ```bash
 # Image object features preparation
@@ -41,7 +36,7 @@ Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tas
 # 
 # Support .h5 and .pkl files
 # .h5:
-# feats_path: "Downloads/reverie_bbox_feat_v2_caffe/"
+# feats_path: "Downloads/reverie_bbox_feat_v2_caffe"
 # feats_format: "h5"
 # .pkl:
 # feats_path: "Downloads/reverie_obj_feats_v2.pkl"
@@ -50,8 +45,8 @@ Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tas
 bash img_data_preparation.sh
 ```
 
-## Weights
-- Grounding model weights: `weights/ckpt/model_epoch_best.pt`
+## Pre-trained Model
+- Grounding pre-trained model weights: `weights/ckpt/model_epoch_best.pt`
   - Download the `model_epoch_best.pt` from [here](https://drive.google.com/drive/folders/1nEaScjwGaIP3r_LtGnheUGqbFBGy1VSt?usp=sharing).
 
 ## Usage
