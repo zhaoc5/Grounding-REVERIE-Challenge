@@ -7,7 +7,7 @@ This code derives from [UNITER](https://github.com/ChenRocks/UNITER).
 You need [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to run the code. For more details, please follow [UNITER](https://github.com/ChenRocks/UNITER) instructions. We tested on Ubuntu 20.04 and Nvidia 2080ti.
 
 ## Data Preparation
-Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://www.baidu.com) or [reverie_bbox_feat_v2_caffe.zip](https://www.baidu.com), both of them are extracted using [BUTD-UNITER-NLVR2](https://github.com/ChenRocks/BUTD-UNITER-NLVR2), and organise data like below:
+Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://drive.google.com/file/d/1zwV3QDPUVt7YmBNqTaCdS6v01U4b6p7M/view?usp=sharing) or [reverie_bbox_feat_v2_caffe.zip](https://www.baidu.com), both of them are extracted using [BUTD-UNITER-NLVR2](https://github.com/ChenRocks/BUTD-UNITER-NLVR2), and organise data like below:
 ```
 |- Grounding-REVERIE-Challenge
     |- Downloads
