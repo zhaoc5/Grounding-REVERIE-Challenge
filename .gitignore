@@ -135,5 +135,6 @@ submit_file/*
 txt_db/ann/iid2bb_id/*
 txt_db/ann/reverie/*
 txt_db/txt/*
+utils_grounding/uniter/*
 weights/ckpt/*
 weights/results/*

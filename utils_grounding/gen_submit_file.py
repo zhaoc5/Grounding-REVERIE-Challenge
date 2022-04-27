@@ -48,39 +48,17 @@ def get_obj_id(input_path, obj_path, txt_db_path, output_path):
                     if item not in pred_id_view:
                         pred_id_view[item] = []
                     pred_id_view[item].append(obj_data[sent_id])
-            pred_obj_vote={}
-            for item_id in pred_id_view:
-                for sent_id in pred_id_view[item_id]:
-                    if item_id not in pred_obj_vote:
-                        pred_obj_vote[item_id] = {}
-                    if sent_id["object_id"] not in pred_obj_vote[item_id]:
-                        pred_obj_vote[item_id][sent_id["object_id"]] = []
-                        pred_obj_vote[item_id][sent_id["object_id"]].append(0) # num_obj
-                        pred_obj_vote[item_id][sent_id["object_id"]].append(5.0) # conf>5
-                    pred_obj_vote[item_id][sent_id["object_id"]][0]+=1
-                    if sent_id["confs"]>pred_obj_vote[item_id][sent_id["object_id"]][1]:
-                        pred_obj_vote[item_id][sent_id["object_id"]][1] = sent_id["confs"]
             pred_obj={}
-            for item_id in pred_obj_vote:
-                vote = 0
-                conf = 0
-                for obj in pred_obj_vote[item_id]:
-                    if pred_obj_vote[item_id][obj][0] >= vote:
-                        if pred_obj_vote[item_id][obj][0] > vote:
-                            if pred_obj_vote[item_id][obj][1] > 5:
-                                obj_id = obj
-                                vote = pred_obj_vote[item_id][obj][0]
-                                conf = pred_obj_vote[item_id][obj][1]
-                        if pred_obj_vote[item_id][obj][0] == vote:
-                            if pred_obj_vote[item_id][obj][1] > conf:
-                                obj_id = obj
-                                vote = pred_obj_vote[item_id][obj][0]
-                                conf = pred_obj_vote[item_id][obj][1]
+            for item_id in pred_id_view:
+                max = -10000
+                for sent_id in pred_id_view[item_id]:
+                    if sent_id["confs"]>max:
+                        max = sent_id["confs"]
+                        obj_id = sent_id["object_id"]
                 if item_id not in pred_obj:
                     pred_obj[item_id] = []
                 pred_obj[item_id].append(obj_id)
-                pred_obj[item_id].append(vote)
-                pred_obj[item_id].append(conf)
+                pred_obj[item_id].append(max)
             new_submit_data=[]
             for item in submit_data:
                 temp_item = copy.deepcopy(item)
