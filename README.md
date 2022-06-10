@@ -7,7 +7,7 @@ This code derives from [UNITER](https://github.com/ChenRocks/UNITER), fine-tuned
 You need [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to run the code. For more details, please refer to [UNITER](https://github.com/ChenRocks/UNITER) for further README information.  We tested on Ubuntu 20.04 and Nvidia 2080ti.
 
 ## Data Preparation
-Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://drive.google.com/file/d/1zwV3QDPUVt7YmBNqTaCdS6v01U4b6p7M/view?usp=sharing) or [reverie_bbox_feat_v2_caffe.zip](https://www.baidu.com)), both of them are extracted using [BUTD Faster R-CNN](https://github.com/peteanderson80/bottom-up-attention) trained on [Visual Genome](http://visualgenome.org/), and organise data like below:
+Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://drive.google.com/file/d/1zwV3QDPUVt7YmBNqTaCdS6v01U4b6p7M/view?usp=sharing) or [reverie_bbox_feat_v2_caffe.zip]( https://pan.baidu.com/s/1hxNypQZLz21RQpMD6yQNag?pwd=nubg) (code: nubg)), both of them are extracted using [BUTD Faster R-CNN](https://github.com/peteanderson80/bottom-up-attention) trained on [Visual Genome](http://visualgenome.org/), and organise data like below:
 ```
 |- Grounding-REVERIE-Challenge
     |- Downloads
