@@ -7,7 +7,9 @@ This code derives from [UNITER](https://github.com/ChenRocks/UNITER), fine-tuned
 You need [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to run the code. For more details, please refer to [UNITER](https://github.com/ChenRocks/UNITER) for further README information.  We tested on Ubuntu 20.04 and Nvidia 2080ti.
 
 ## Data Preparation
-Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2) and object features ([reverie_obj_feats_v2.pkl](https://drive.google.com/file/d/1zwV3QDPUVt7YmBNqTaCdS6v01U4b6p7M/view?usp=sharing) or [reverie_bbox_feat_v2_caffe.zip]( https://pan.baidu.com/s/1hxNypQZLz21RQpMD6yQNag?pwd=nubg) (code: nubg)), both of them are extracted using [BUTD Faster R-CNN](https://github.com/peteanderson80/bottom-up-attention) trained on [Visual Genome](http://visualgenome.org/), and organise data like below:
+Note that BBoxes_v2 files have two different forms of organization, you need downloads [ Grounding_BBoxes_v2](https://drive.google.com/drive/folders/1nEaScjwGaIP3r_LtGnheUGqbFBGy1VSt?usp=sharing), which is different from the one used by [HOP-REVERIE-Challenge](https://github.com/YanyuanQiao/HOP-REVERIE-Challenge).
+
+Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tasks/REVERIE/data_v2), [ Grounding_BBoxes_v2](https://drive.google.com/drive/folders/1nEaScjwGaIP3r_LtGnheUGqbFBGy1VSt?usp=sharing) and object features ([reverie_obj_feats_v2.pkl](https://drive.google.com/file/d/1zwV3QDPUVt7YmBNqTaCdS6v01U4b6p7M/view?usp=sharing) or [reverie_bbox_feat_v2_caffe.zip]( https://pan.baidu.com/s/1hxNypQZLz21RQpMD6yQNag?pwd=nubg), code: nubg), both of them are extracted using [BUTD Faster R-CNN](https://github.com/peteanderson80/bottom-up-attention) trained on [Visual Genome](http://visualgenome.org/), and organise data like below:
 ```
 |- Grounding-REVERIE-Challenge
     |- Downloads
@@ -16,7 +18,7 @@ Download the [REVERIE data](https://github.com/YuankaiQi/REVERIE/tree/master/tas
         |   |- REVERIE_val_unseen.json
         |   |- REVERIE_test.json
         |                     
-        |- BBoxes_v2
+        |- Grounding_BBoxes_v2
         |   |- 1LXtFkjw3qL_0b22fa63d0f54a529c525afbf2e8bb25.json
         |   |- 1LXtFkjw3qL_0b302846f0994ec9851862b1d317d7f2.json
         |   ...           
@@ -53,6 +55,7 @@ bash img_data_preparation.sh
 1. ```bash
     # Docker image should be automatically pulled
 
+    cd Grounding-REVERIE-Challenge
     bash launch_container.sh
     ```
 2. ```bash
@@ -66,7 +69,7 @@ bash img_data_preparation.sh
     # output_dir: "submit_file"
     #
     # reverie_dir: "Downloads/REVERIE"
-    # boxes_dir: "Downloads/BBoxes_v2"
+    # boxes_dir: "Downloads/Grounding_BBoxes_v2"
     #
     # We support multi-GPU inference
     # NUM_GPUS=4

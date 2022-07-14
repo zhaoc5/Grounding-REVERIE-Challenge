@@ -2,7 +2,7 @@ NUM_GPUS=1
 output_dir="submit_file"
 input_nav_dir="--nav input_nav_dir"
 reverie_dir="--reverie Downloads/REVERIE"
-boxes_dir="Downloads/BBoxes_v2"
+boxes_dir="Downloads/Grounding_BBoxes_v2"
 
 annotation="--annotation txt_db/ann/reverie/refs.p 
                            txt_db/ann/reverie/instances.json 
