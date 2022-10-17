@@ -5,6 +5,8 @@ This code derives from [UNITER](https://github.com/ChenRocks/UNITER), fine-tuned
 
 ## Requirements
 You need [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to run the code. For more details, please refer to [UNITER](https://github.com/ChenRocks/UNITER) for further README information.  We tested on Ubuntu 20.04 and Nvidia 2080ti.
+  - [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)
+  - [Docker group membership](https://docs.docker.com/engine/install/linux-postinstall/)
 
 ## Data Preparation
 Note that BBoxes_v2 files have two different forms of organization, so you need download [Grounding_BBoxes_v2](https://drive.google.com/drive/folders/1nEaScjwGaIP3r_LtGnheUGqbFBGy1VSt?usp=sharing), which is different from the one used by [HOP-REVERIE-Challenge](https://github.com/YanyuanQiao/HOP-REVERIE-Challenge).
